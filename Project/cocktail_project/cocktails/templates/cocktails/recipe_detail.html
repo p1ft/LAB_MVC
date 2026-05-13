@@ -1,0 +1,30 @@
+{% extends "cocktails/base.html" %}
+
+{% block title %}{{ recipe.name }}{% endblock %}
+
+{% block content %}
+<h1>{{ recipe.name }}</h1>
+
+<section class="panel">
+    <p><strong>Category:</strong> {{ recipe.category|default:"No category" }}</p>
+    <p><strong>Intensity:</strong> {{ recipe.get_intensity_display }}</p>
+    <p><strong>Created:</strong> {{ recipe.created_at|date:"Y-m-d H:i" }}</p>
+
+    <h2>Ingredients</h2>
+    <ul class="ingredients-list">
+        {% for ingredient in recipe.ingredients.all %}
+            <li>{{ ingredient.name }} ({{ ingredient.unit }})</li>
+        {% empty %}
+            <li>No ingredients added yet.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Instructions</h2>
+    <div class="instructions-text">{{ recipe.instructions|linebreaksbr }}</div>
+</section>
+
+<section class="page-footer-actions">
+    <a class="button button-secondary" href="{% url 'cocktails:recipe_list' %}">Back to List</a>
+    <a class="button button-danger" href="{% url 'cocktails:recipe_delete' recipe.pk %}">Delete Recipe</a>
+</section>
+{% endblock %}
