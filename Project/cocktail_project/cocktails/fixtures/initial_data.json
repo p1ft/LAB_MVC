@@ -1,0 +1,119 @@
+[
+  {
+    "model": "cocktails.category",
+    "pk": 1,
+    "fields": {
+      "name": "Classic"
+    }
+  },
+  {
+    "model": "cocktails.category",
+    "pk": 2,
+    "fields": {
+      "name": "Tropical"
+    }
+  },
+  {
+    "model": "cocktails.category",
+    "pk": 3,
+    "fields": {
+      "name": "Non-Alcoholic"
+    }
+  },
+  {
+    "model": "cocktails.ingredient",
+    "pk": 1,
+    "fields": {
+      "name": "White Rum",
+      "unit": "ml"
+    }
+  },
+  {
+    "model": "cocktails.ingredient",
+    "pk": 2,
+    "fields": {
+      "name": "Lime Juice",
+      "unit": "ml"
+    }
+  },
+  {
+    "model": "cocktails.ingredient",
+    "pk": 3,
+    "fields": {
+      "name": "Mint Leaves",
+      "unit": "piece"
+    }
+  },
+  {
+    "model": "cocktails.ingredient",
+    "pk": 4,
+    "fields": {
+      "name": "Pineapple Juice",
+      "unit": "ml"
+    }
+  },
+  {
+    "model": "cocktails.ingredient",
+    "pk": 5,
+    "fields": {
+      "name": "Coconut Cream",
+      "unit": "ml"
+    }
+  },
+  {
+    "model": "cocktails.ingredient",
+    "pk": 6,
+    "fields": {
+      "name": "Orange Juice",
+      "unit": "ml"
+    }
+  },
+  {
+    "model": "cocktails.cocktailrecipe",
+    "pk": 1,
+    "fields": {
+      "name": "Virgin Sunrise",
+      "instructions": "Pour orange juice into a glass filled with ice and stir gently before serving.",
+      "intensity": "low",
+      "created_at": "2026-05-01T10:00:00Z",
+      "category": 3,
+      "ingredients": [6]
+    }
+  },
+  {
+    "model": "cocktails.cocktailrecipe",
+    "pk": 2,
+    "fields": {
+      "name": "Mojito",
+      "instructions": "Mix rum and lime juice, add mint leaves, then serve over ice.",
+      "intensity": "medium",
+      "created_at": "2026-05-02T11:00:00Z",
+      "category": 1,
+      "ingredients": [1, 2, 3]
+    }
+  },
+  {
+    "model": "cocktails.cocktailrecipe",
+    "pk": 3,
+    "fields": {
+      "name": "Pina Colada",
+      "instructions": "Shake rum, pineapple juice, and coconut cream well, then pour into a chilled glass.",
+      "intensity": "high",
+      "created_at": "2026-05-03T12:00:00Z",
+      "category": 2,
+      "ingredients": [1, 4, 5]
+    }
+  },
+  {
+    "model": "cocktails.cocktailrecipe",
+    "pk": 4,
+    "fields": {
+      "name": "Tropical Breeze",
+      "instructions": "Combine pineapple juice, orange juice, and lime juice over ice and stir before serving.",
+      "intensity": "medium",
+      "created_at": "2026-05-04T13:00:00Z",
+      "category": 2,
+      "ingredients": [2, 4, 6]
+    }
+  }
+]

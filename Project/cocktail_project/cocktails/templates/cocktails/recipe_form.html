@@ -1,0 +1,25 @@
+{% extends "cocktails/base.html" %}
+
+{% block title %}{% if recipe %}Edit Recipe{% else %}Add Recipe{% endif %}{% endblock %}
+
+{% block content %}
+<h1>{% if recipe %}Edit Recipe{% else %}Add Recipe{% endif %}</h1>
+
+<section class="panel">
+    <form method="post" class="simple-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div class="form-actions">
+            <button type="submit" class="button button-primary">
+                {% if recipe %}Update Recipe{% else %}Save Recipe{% endif %}
+            </button>
+            {% if recipe %}
+                <a class="button button-secondary" href="{% url 'cocktails:recipe_detail' recipe.pk %}">Cancel</a>
+            {% else %}
+                <a class="button button-secondary" href="{% url 'cocktails:recipe_list' %}">Cancel</a>
+            {% endif %}
+        </div>
+    </form>
+</section>
+{% endblock %}
